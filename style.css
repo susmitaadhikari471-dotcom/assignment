@@ -168,6 +168,7 @@ body.dark-mode .card .title {
 }
 
 body.dark-mode .card .bio,
-body.dark-mode .skills-list {
+body.dark-mode .skills-list,
+body.dark-mode #hobby-list {
     color: #ccc;
 }
