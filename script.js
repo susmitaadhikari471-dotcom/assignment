@@ -41,3 +41,17 @@ themeBtn.addEventListener("click", function () {
         themeBtn.textContent = "🌙 Dark Mode";
     }
 });
+
+
+// Part 4: Array and For Loop Hobby List Rendering (Week 12 Lab Assignment)
+const hobbies = ['Photography', 'Trekking', 'Piano', 'Cooking'];
+const listContainer = document.getElementById('hobby-list');
+const ul = document.createElement('ul');
+
+for (let i = 0; i < hobbies.length; i++) {
+    const li = document.createElement('li');
+    li.textContent = hobbies[i];
+    ul.appendChild(li);
+}
+
+listContainer.appendChild(ul);
