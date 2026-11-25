@@ -207,19 +207,18 @@ body.dark-mode #hobby-list {
 
 /* --- Responsive Mobile Styles (Week 13 Addition) --- */
 @media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
     .navbar {
         flex-direction: column;
         align-items: center;
         padding: 15px;
         gap: 12px;
     }
-    @media (max-width: 768px) {
-    html,
-    body {
-        overflow-x: hidden;
-        max-width: 100%;
-    }
-}
 
     .nav-links {
         flex-direction: column;
