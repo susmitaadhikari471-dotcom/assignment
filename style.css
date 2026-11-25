@@ -213,6 +213,13 @@ body.dark-mode #hobby-list {
         padding: 15px;
         gap: 12px;
     }
+    @media (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+}
 
     .nav-links {
         flex-direction: column;
