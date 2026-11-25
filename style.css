@@ -5,6 +5,11 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f6f9;
@@ -21,6 +26,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 15px 30px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .navbar .logo {
@@ -32,6 +39,7 @@ body {
     list-style: none;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -47,20 +55,21 @@ body {
 /* --- Content Wrapper & Cards --- */
 .content-wrapper {
     display: flex;
-    flex-direction: row;       
-    justify-content: center;   
-    align-items: stretch;      
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
     padding: 30px 20px;
-    gap: 20px;                 
-    flex-wrap: wrap;           
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
     background: #ffffff;
-    width: 380px;              
+    width: 380px;
+    max-width: 100%;
     display: flex;
-    flex-direction: column;    
-    justify-content: space-between; 
+    flex-direction: column;
+    justify-content: space-between;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -82,6 +91,20 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* --- Gallery Box Styles --- */
+.gallery-box {
+    margin: 10px 0 20px 0;
+}
+
+#gallery-img {
+    width: 100%;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
 }
 
 /* --- Card Text Styles --- */
@@ -106,6 +129,13 @@ body {
 
 .skills-list {
     text-align: left;
+    margin: 0 auto 15px 40px;
+    color: #555;
+    font-size: 14px;
+}
+
+.hobby-list-container {
+    text-align: left;
     margin: 0 auto 20px 40px;
     color: #555;
     font-size: 14px;
@@ -116,7 +146,8 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin-top: auto;          
+    margin-top: auto;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -169,6 +200,52 @@ body.dark-mode .card .title {
 
 body.dark-mode .card .bio,
 body.dark-mode .skills-list,
+body.dark-mode .hobby-list-container,
 body.dark-mode #hobby-list {
     color: #ccc;
+}
+
+/* --- Responsive Mobile Styles (Week 13 Addition) --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .content-wrapper {
+        padding: 20px 12px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .card h1 {
+        font-size: 1.6rem;
+    }
+
+    .skills-list,
+    .hobby-list-container {
+        margin-left: 20px;
+    }
+
+    #gallery-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .btn,
+    button {
+        min-height: 44px;
+    }
 }
