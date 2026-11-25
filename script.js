@@ -55,3 +55,46 @@ for (let i = 0; i < hobbies.length; i++) {
 }
 
 listContainer.appendChild(ul);
+
+
+// Part 5: Two-Array Parallel Sync Gallery (Week 13 Addition)
+const galleryImages = [
+    "snapchat-1099579794.jpg",
+    "snapchat-1099579794.jpg",
+    "snapchat-1099579794.jpg"
+];
+
+const galleryDescriptions = [
+    "Photography — Capturing everyday moments and travels.",
+    "Trekking & Hiking — Exploring trails and new places.",
+    "Coding & Web Dev — Building responsive pages in VS Code."
+];
+
+let currentIndex = 0;
+const galleryImg = document.getElementById("gallery-img");
+const galleryDesc = document.getElementById("gallery-desc");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtn = document.getElementById("next-btn");
+
+function updateGallery() {
+    if (galleryImg && galleryDesc) {
+        galleryImg.src = galleryImages[currentIndex];
+        galleryDesc.textContent = galleryDescriptions[currentIndex];
+    }
+}
+
+if (nextBtn) {
+    nextBtn.addEventListener("click", function () {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        updateGallery();
+    });
+}
+
+if (prevBtn) {
+    prevBtn.addEventListener("click", function () {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateGallery();
+    });
+}
+
+updateGallery();
